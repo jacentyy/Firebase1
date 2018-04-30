@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "877035289868",
+    "firebase_url": "https://thingsy-3fa74.firebaseio.com",
+    "project_id": "thingsy-3fa74",
+    "storage_bucket": "thingsy-3fa74.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877035289868:android:4d84f299af30c537",
+        "android_client_info": {
+          "package_name": "info.thingsy.thingsy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877035289868-q43rslr4sbqn3lgpd00to0bqlddi8r8j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "info.thingsy.thingsy",
+            "certificate_hash": "679d08ef5639d02a538e1503c04dac760a6bc71a"
+          }
+        },
+        {
+          "client_id": "877035289868-3bg7inmgpnt4d9e51g4hub42r1o24k3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "info.thingsy.thingsy",
+            "certificate_hash": "1c69b406c5bfd414aade41a2a394ed3b2c820891"
+          }
+        },
+        {
+          "client_id": "877035289868-m5935r54gvfssg85s9q3f360d6e8cei1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0bdGNFdukFSZ6iptTj0TzxOmsuylFa-Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877035289868-m5935r54gvfssg85s9q3f360d6e8cei1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
