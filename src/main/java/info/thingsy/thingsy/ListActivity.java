@@ -2,6 +2,8 @@ package info.thingsy.thingsy;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -12,6 +14,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
+import static info.thingsy.thingsy.R.layout.activity_list;
+
 public class ListActivity extends AppCompatActivity {
     ArrayList<TravelDeal> deals;
     private FirebaseDatabase mFirebaseDatabase;
@@ -21,38 +25,13 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mDatabaseReference = mFirebaseDatabase.getReference().child("traveldeals");
+        setContentView(activity_list);
 
-        mChildListener = new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                TextView tvDeals = (TextView) findViewById(R.id.tvDeals);
-                TravelDeal td = dataSnapshot.getValue(TravelDeal.class);
-                tvDeals.setText(tvDeals.getText() + "\n" + td.getTitle());
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        };
-        mDatabaseReference.addChildEventListener(mChildListener);
+        RecyclerView rvDeals = (RecyclerView) findViewById(R.id.rvDeals);
+        final DealAdapter adapter = new DealAdapter();
+        rvDeals.setAdapter(adapter);
+        LinearLayoutManager dealsLayoutManager =
+                new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        rvDeals.setLayoutManager(dealsLayoutManager);
     }
 }
