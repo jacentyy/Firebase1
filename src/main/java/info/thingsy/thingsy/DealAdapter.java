@@ -14,6 +14,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 /**
@@ -84,15 +86,30 @@ public class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder
         return deals.size();
     }
 
-    public class DealViewHolder extends RecyclerView.ViewHolder{
+    public class DealViewHolder extends RecyclerView.ViewHolder
+        implements View.OnClickListener{
         TextView tvTitle;
+        TextView tvDescription;
+        TextView tvPrice;
+
         public DealViewHolder(View itemView) {
             super(itemView);
             tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
+            tvDescription = (TextView) itemView.findViewById(R.id.tvDescription);
+            tvPrice = (TextView) itemView.findViewById(R.id.tvPrice);
+            itemView.setOnClickListener(this);
         }
 
         public void bind(TravelDeal deal) {
             tvTitle.setText(deal.getTitle());
+            tvDescription.setText(deal.getDescription());
+            tvPrice.setText(deal.getPrice());
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            Log.d("Click", String.valueOf(position));
         }
     }
 }
