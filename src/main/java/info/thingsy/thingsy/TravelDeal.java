@@ -1,10 +1,12 @@
 package info.thingsy.thingsy;
 
+import java.io.Serializable;
+
 /**
  * Created by PLJAPOL1 on 2018-04-30.
  */
 
-public class TravelDeal {
+public class TravelDeal implements Serializable {
     private String id;
     private String title;
     private String description;
